@@ -5,13 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Simple from './Simple';
 import Expressions from './Expressions';
+import Conditionals from './Conditionals';
+import Events from './Events';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Expressions />
+    <Events />
   </React.StrictMode>
 );
 
