@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import UseEffectExamples from './UseEffectExamples';
+import GrandParent from './GrandParent';
+import ValueContext from './ValueContext';
 
 function App() {
   const [hide, setHide] = useState(false);
@@ -16,6 +18,9 @@ function App() {
       />{' '}
       Hide
       {hide ? null : <UseEffectExamples />}
+      <ValueContext.Provider value={hide}>
+        <GrandParent />
+      </ValueContext.Provider>
     </>
   );
 }
