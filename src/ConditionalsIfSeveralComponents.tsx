@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ProjectContent from './ProjectContent';
 import SelectNumber from './SelectNumber';
 import Simple from './Simple';
 
@@ -23,9 +24,27 @@ export default function ConditionalsIfSeveralComponents() {
     <>
       <h1>Conditionals If example</h1>
       <div>Rate this website</div>
-      <SelectNumber maxValue={5} onSelected={setSelectedRate} />
+      <SelectNumber
+        selectContent={(value) => `select ${value}`}
+        maxValue={5}
+        onSelected={setSelectedRate}
+      />
 
-      <div>{displayResult()}</div>
+      {/* <div>{displayResult()}</div> */}
+      <div>
+        <ProjectContent
+          bottomPart={
+            <>
+              <span>The end?</span>
+            </>
+          }
+        >
+          <>
+            <Simple />
+            <button>This is a button as a parameter</button>
+          </>
+        </ProjectContent>
+      </div>
     </>
   );
 }
