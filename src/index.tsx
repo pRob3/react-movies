@@ -8,13 +8,14 @@ import Expressions from './Expressions';
 import Conditionals from './Conditionals';
 import Events from './Events';
 import ConditionalsIf from './ConditionalsIf';
+import MapExample from './MapExample';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <ConditionalsIf />
+    <MapExample />
   </React.StrictMode>
 );
 
