@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import UseEffectExamples from './UseEffectExamples';
 
 function App() {
-  const [myDate, myDateUpdate] = useState(new Date());
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      myDateUpdate(new Date());
-    }, 1000);
-    return () => clearInterval(intervalId);
-  }, []);
+  const [hide, setHide] = useState(false);
+
   return (
-    <div>
-      <h3>Example HTML</h3>
-      <input />
-      <div>{myDate.toString()}</div>
-    </div>
+    <>
+      <input
+        type='checkbox'
+        onChange={() => {
+          setHide(!hide);
+        }}
+      />{' '}
+      Hide
+      {hide ? null : <UseEffectExamples />}
+    </>
   );
 }
 

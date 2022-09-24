@@ -3,21 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Simple from './Simple';
-import Expressions from './Expressions';
-import Conditionals from './Conditionals';
-import Events from './Events';
-import ConditionalsIf from './ConditionalsIf';
-import MapExample from './MapExample';
-import ConditionalsIfSeveralComponents from './ConditionalsIfSeveralComponents';
-import CSSExamples from './CSSExamples';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <CSSExamples />
+    <App />
   </React.StrictMode>
 );
 
