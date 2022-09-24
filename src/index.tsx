@@ -7,13 +7,14 @@ import Simple from './Simple';
 import Expressions from './Expressions';
 import Conditionals from './Conditionals';
 import Events from './Events';
+import ConditionalsIf from './ConditionalsIf';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Events />
+    <ConditionalsIf />
   </React.StrictMode>
 );
 
