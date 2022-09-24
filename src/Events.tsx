@@ -1,13 +1,17 @@
+import { useState } from 'react';
+
 export default function Events() {
-  let canSee = false;
+  const [canSee, setCansee] = useState(false);
+  const [text, setText] = useState('');
 
   function handleCheckboxChanged() {
     console.log('Checkbox changed!');
-    canSee = !canSee;
+    setCansee(!canSee);
   }
 
   function handleKeyUp(e: React.KeyboardEvent<HTMLInputElement>) {
     console.log(e.currentTarget.value);
+    setText(e.currentTarget.value);
   }
 
   return (
@@ -31,6 +35,8 @@ export default function Events() {
       </div>
 
       {canSee ? <div>Can see secret</div> : <div>Can't see secret</div>}
+
+      <div>{text}</div>
     </>
   );
 }
