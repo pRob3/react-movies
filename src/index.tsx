@@ -9,13 +9,14 @@ import Conditionals from './Conditionals';
 import Events from './Events';
 import ConditionalsIf from './ConditionalsIf';
 import MapExample from './MapExample';
+import ConditionalsIfSeveralComponents from './ConditionalsIfSeveralComponents';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <MapExample />
+    <ConditionalsIfSeveralComponents />
   </React.StrictMode>
 );
 
