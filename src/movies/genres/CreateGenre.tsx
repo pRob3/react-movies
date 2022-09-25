@@ -14,7 +14,7 @@ export default function CreateGenre() {
         initialValues={{ name: '' }}
         onSubmit={async (value) => {
           // When the form is ssubmitted
-          await new Promise((r) => setTimeout(r, 3000));
+          await new Promise((r) => setTimeout(r, 1));
           console.log(value);
         }}
         validationSchema={Yup.object({
