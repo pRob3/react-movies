@@ -6,7 +6,7 @@ import css from './MoviesList.module.css';
 
 export default function MoviesList(props: moviesListProps) {
   return (
-    <Genericlist list={props.movies} loadingUI={<>Custom loading...</>}>
+    <Genericlist list={props.movies}>
       <div className={css.div}>
         {props.movies?.map((movie) => (
           <IndividualMovie {...movie} key={movie.id} />
