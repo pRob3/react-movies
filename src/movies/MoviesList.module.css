@@ -1,0 +1,6 @@
+.div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-wrap: row;
+  align-items: center;
+}
