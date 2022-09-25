@@ -1,4 +1,5 @@
-import { useHistory } from 'react-router-dom';
+import { Field, Form, Formik } from 'formik';
+import { Link, useHistory } from 'react-router-dom';
 import Button from '../../utils/Button';
 
 export default function CreateGenre() {
@@ -6,15 +7,26 @@ export default function CreateGenre() {
   return (
     <>
       <h3>Create Genre</h3>
-      <Button
-        onClick={() => {
-          // Saving to the DB
 
-          history.push('/genres');
+      <Formik
+        initialValues={{ name: '' }}
+        onSubmit={(value) => {
+          // When the form is ssubmitted
+          console.log(value);
         }}
       >
-        Save Changes
-      </Button>
+        <Form>
+          <div className='mb-3'>
+            <label htmlFor='name'>Name</label>
+            <Field name='name' id='name' className='form-control' />
+          </div>
+
+          <Button type='submit'>Save Changes</Button>
+          <Link className='btn btn-secondary' to='/genres'>
+            Cancel
+          </Link>
+        </Form>
+      </Formik>
     </>
   );
 }
