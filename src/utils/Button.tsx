@@ -13,7 +13,11 @@ export default function Button(props: buttonProps) {
 
 interface buttonProps {
   children: React.ReactNode;
-  color: 'primary' | 'secondary' | 'danger' | 'success' | 'warning';
+  color?: 'primary' | 'secondary' | 'danger' | 'success' | 'warning';
   size?: 'sm' | 'lg';
   onClick?: () => void;
 }
+
+Button.defaultProps = {
+  color: 'primary',
+};
