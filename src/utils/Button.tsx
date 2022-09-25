@@ -3,9 +3,7 @@ export default function Button(props: buttonProps) {
     <button
       type={props.type}
       disabled={props.disabled}
-      className={`btn btn-${props.color} ${
-        props.size ? `btn-${props.size}` : ''
-      }`}
+      className={props.className}
       onClick={props.onClick}
     >
       {props.children}
@@ -15,7 +13,7 @@ export default function Button(props: buttonProps) {
 
 interface buttonProps {
   children: React.ReactNode;
-  color?: 'primary' | 'secondary' | 'danger' | 'success' | 'warning';
+  className: string;
   size?: 'sm' | 'lg';
   onClick?: () => void;
   type: 'button' | 'submit' | 'reset' | undefined;
@@ -23,7 +21,7 @@ interface buttonProps {
 }
 
 Button.defaultProps = {
-  color: 'primary',
+  className: 'btn btn-primary',
   type: 'button',
   disabled: false,
 };
