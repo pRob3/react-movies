@@ -1,3 +1,4 @@
+import { actorMovieDTO } from './actors/actors.model';
 import { genreDTO } from './genres/genres.model';
 import MovieForm from './MovieForm';
 import { movieTheaterDTO } from './movietheaters/movieTheater.model';
@@ -11,6 +12,16 @@ export default function EditMovie() {
   ];
   const selectedMovieTheaters: movieTheaterDTO[] = [
     { id: 1, name: 'Bergakungen' },
+  ];
+
+  const selectedActors: actorMovieDTO[] = [
+    {
+      id: 2,
+      name: 'Dwayne',
+      character: 'The Rock',
+      picture:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Dwayne_Johnson_2%2C_2013.jpg/220px-Dwayne_Johnson_2%2C_2013.jpg',
+    },
   ];
 
   return (
@@ -28,7 +39,7 @@ export default function EditMovie() {
         selectedGenres={selectedGenres}
         nonSelectedMovieTheaters={nonSelectedMovieTheaters}
         selectedMovieTheaters={selectedMovieTheaters}
-        selectedActors={[]}
+        selectedActors={selectedActors}
       />
     </>
   );
