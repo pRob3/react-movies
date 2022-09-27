@@ -32,7 +32,6 @@ export default function EditEntity<TCreation, TRead>(
       } else {
         await axios.put(`${props.url}/${id}`, entityToEdit);
       }
-
       history.push(props.indexURL);
     } catch (error) {
       if (error && error.response) {
