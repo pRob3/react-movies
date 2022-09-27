@@ -61,7 +61,10 @@ export default function IndexGenres() {
               <tr key={genre.id}>
                 <td>{genre.name}</td>
                 <td>
-                  <Link className='btn btn-primary' to={`/genres/${genre.id}`}>
+                  <Link
+                    className='btn btn-primary'
+                    to={`/genres/edit/${genre.id}`}
+                  >
                     Edit
                   </Link>
                   <Button className='btn btn-danger'>Delete</Button>
