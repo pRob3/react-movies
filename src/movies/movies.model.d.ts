@@ -12,7 +12,7 @@ export interface movieDTO {
   releaseDate: Date;
   genres: genreDTO[];
   movieTheaters: movieTheaterDTO[];
-  actors?: actorMovieDTO[];
+  actors: actorMovieDTO[];
 }
 
 export interface movieCreationDTO {
@@ -36,4 +36,13 @@ export interface landingPageDTO {
 export interface moviesPostGetDTO {
   genres: genreDTO[];
   movieTheaters: movieTheaterDTO[];
+}
+
+export interface moviePutGetDTO {
+  movie: movieDTO;
+  selectedGenres: genreDTO[];
+  nonSelectedGenres: genreDTO[];
+  selectedMovieTheaters: movieTheaterDTO[];
+  nonSelectedMovieTheaters: movieTheaterDTO[];
+  actors: actorMovieDTO[];
 }

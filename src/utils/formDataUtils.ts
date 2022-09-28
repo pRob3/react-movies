@@ -25,12 +25,13 @@ export function convertMovieToFormData(movie: movieCreationDTO) {
   const formData = new FormData();
 
   formData.append('title', movie.title);
+
   if (movie.summary) {
     formData.append('summary', movie.summary);
   }
 
   formData.append('trailer', movie.trailer);
-  formData.append('inTheaters', movie.inTheaters.toString());
+  formData.append('inTheaters', String(movie.inTheaters));
 
   if (movie.releaseDate) {
     formData.append('releaseDate', formatDate(movie.releaseDate));
