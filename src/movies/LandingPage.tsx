@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { urlMovies } from '../endpoints';
 import AlertContext from '../utils/AlertContext';
 import { landingPageDTO } from './movies.model';
