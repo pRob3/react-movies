@@ -1,6 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 import { useState, useEffect } from 'react';
 import { urlMovies } from '../endpoints';
+import AlertContext from '../utils/AlertContext';
 import { landingPageDTO } from './movies.model';
 import MoviesList from './MoviesList';
 
@@ -18,12 +19,16 @@ export default function LandingPage() {
   }
 
   return (
-    <>
+    <AlertContext.Provider
+      value={() => {
+        loadData();
+      }}
+    >
       <h3>In Theaters</h3>
       <MoviesList movies={movies.inTheaters} />
 
       <h3>Upcoming Releases</h3>
       <MoviesList movies={movies.upComingReleases} />
-    </>
+    </AlertContext.Provider>
   );
 }
