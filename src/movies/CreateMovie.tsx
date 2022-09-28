@@ -39,7 +39,7 @@ export default function CreateMovie() {
         data: formData,
         headers: { 'Content-Type': 'multipart/form-data' },
       });
-      history.push(`/movies/${response.data}`);
+      history.push(`/movie/${response.data}`);
     } catch (error) {
       setErrors(error.response.data);
     }

@@ -1,11 +1,21 @@
+import axios, { AxiosResponse } from 'axios';
 import { useState, useEffect } from 'react';
+import { urlMovies } from '../endpoints';
 import { landingPageDTO } from './movies.model';
 import MoviesList from './MoviesList';
 
 export default function LandingPage() {
   const [movies, setMovies] = useState<landingPageDTO>({});
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    loadData();
+  }, []);
+
+  function loadData() {
+    axios.get(urlMovies).then((response: AxiosResponse<landingPageDTO>) => {
+      setMovies(response.data);
+    });
+  }
 
   return (
     <>
@@ -13,7 +23,7 @@ export default function LandingPage() {
       <MoviesList movies={movies.inTheaters} />
 
       <h3>Upcoming Releases</h3>
-      <MoviesList movies={movies.upcomingReleases} />
+      <MoviesList movies={movies.upComingReleases} />
     </>
   );
 }
