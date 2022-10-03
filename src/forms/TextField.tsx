@@ -2,27 +2,34 @@ import { Field, ErrorMessage } from 'formik';
 
 export default function TextField(props: textFieldProps) {
   return (
-    <div className='mb-3'>
-      <label htmlFor={props.field}>{props.displayName}</label>
+    <>
       <Field
         type={props.type}
         name={props.field}
         id={props.field}
-        className='form-control'
+        className={props.classes}
+        placeholder={props.placeholder}
+        required={props.required}
       />
+      <label htmlFor={props.field}>{props.displayName}</label>
       <ErrorMessage name={props.field}>
-        {(msg) => <div className='text-danger'>{msg}</div>}
+        {(msg) => <div className='input_error'>{msg}</div>}
       </ErrorMessage>
-    </div>
+    </>
   );
 }
 
 interface textFieldProps {
   field: string;
   displayName: string;
-  type: 'text' | 'password';
+  type: 'text' | 'password' | 'email';
+  classes?: string;
+  placeholder?: string;
+  required?: boolean;
 }
 
 TextField.defaultProps = {
   type: 'text',
+  classes: 'form-control',
+  required: false,
 };
